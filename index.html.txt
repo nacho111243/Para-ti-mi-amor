@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 💙</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.4em;
+      margin-top: 10px;
+    }
+
+    .hearts {
+      font-size: 2em;
+      margin-top: 20px;
+      color: pink;
+    }
+
+    .audio-btn {
+      background: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .audio-btn:hover {
+      background: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <h1>El pensamiento más hermoso que tengo al despertar<br>
+      y único sueño que quiero repetir al descansar</h1>
+  <p class="hearts">Te amo muchoooo ❤️❤️❤️❤️❤️❤️❤️❤️</p>
+
+  <button class="audio-btn" onclick="playAudio()">💖 Toca aquí para escuchar la canción 💖</button>
+  <audio id="loveSong" autoplay>
+    <source src="https://www.youtube.com/embed/KnQz7-GMb_M" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    function playAudio() {
+      const audio = document.getElementById("loveSong");
+      audio.play();
+    }
+
+    // intento de reproducción automática
+    window.addEventListener('load', () => {
+      const audio = document.getElementById("loveSong");
+      audio.play().catch(() => {
+        // si falla, se espera que el usuario toque el botón
+      });
+    });
+  </script>
+</body>
+</html>
